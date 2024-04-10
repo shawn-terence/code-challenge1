@@ -50,6 +50,7 @@ def get_all_powers():
 
 @app.route('/powers/<int:id>', methods=['GET'])
 def get_power_details(id):
+    
     power = Power.query.get(id)
     if power:
         return jsonify(power.to_dict()), 200
